@@ -82,8 +82,14 @@ Subclasses Descriptions -
 ### TeamReader
 Class Description - Allows for the user to pass in a File and get back a PlayerList loaded from that file.
 
+Methods -
+* `teamReader` reads a .txt file and calls Player constructors and the addPlayer method of PlayerList to create a team. Accepts a String filename. Returns nothing.
+
 ### TeamWriter
 Class Description - Allows for the user to pass in a File and a PlayerList and the PlayerList will be written to the file.
+
+Methods - 
+* `teamWriter` prints out all the Players from the ArrayList into a .txt file. Accepts a String filename. Returns nothing.
 
 ## Implementation Details
 Provides a full description of the internal state of the class and for all methods there is a plan for implementation or an algorithm provided.
