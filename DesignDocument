@@ -1,11 +1,11 @@
 # Asignment 1
 ## The Public Interface
-The public interface includes the roster information of the players as well as score keeping functionalitites. It incapsulates the Player and PlayerList classes. The Player class creates and changes player information. The PlayerList class stores the player information as well as returning and searching the list. The Menu class provides such options to the user as list all of the player's roster information, list all of the player's statistics information, add a new player, record a shot, record a goal (with up to 2 assists), and record a power play goal (with up to 2  power play assists).
+The public interface will allow the user to add new players, list their roster information, list their stats, record dhots, record goals and assits, record powerplay goals and assists, as well as relating that information in relation to a goalie, recording minutes played by a goalie, and recording shutouts with minutes played.
 
-Read more about the classes below in the order of Player, Player List, and Menu.
+Read more about the classes below in the order of Player, Goalie, Skater, PlayerList, TeamReader, TeamWriter, TableFactory, Table, RosterTable, SkaterStatTable,  and GoalieStatTable.
 
-### Player
-Class Description - The Player class manages the Player objects. Each player includes data for name, birthdate, hometown, weight, height, position, goals, assists, powerplay goals, powerplay assists, shots made, points scored, and powerplay points scored. 
+### Player, Skater, and Goalie
+Class Description - The Player superclass has 2 subclasses, Skater and Goalie. Both a Skater and a Goalie have the "Is A" relationship to 
 
 Method Descriptions -
 The methods in includes 3 constructors. The first is the `roster` constructor for the Player object that accepts the name, birthdate, hometown, weight, height, and position while goals, assists, powerplay goals (ppGoals), powerplay assists (ppAssists), shots are set initialy to 0. The second is the `recreation` constructor, which will take all of the player information including roster as well as the play information (goals, assists etc.). This constructor accepts name, birthdate, hometown, weight, height, position, assists, powerplay goals (ppGoals), powerplay assists (ppAssists), and shots. The third is the `copy` constructor, which will set all of the values in the new player to be the same as another. This method accepts an Player. All constructor methods return void.
