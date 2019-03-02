@@ -5,16 +5,40 @@ The public interface will allow the user to add new players, list their roster i
 Read more about the classes below in the order of Player, Goalie, Skater, PlayerList, TeamReader, TeamWriter, TableFactory, Table, RosterTable, SkaterStatTable,  and GoalieStatTable.
 
 ### Player, Skater, and Goalie
-Class Description - The Player superclass has 2 subclasses, Skater and Goalie. Both a Skater and a Goalie have the "Is A" relationship to 
+Class Description - The Player abstract superclass has 2 subclasses, Skater and Goalie. Both a Skater and a Goalie have the "Is A" relationship to Player.
 
-Method Descriptions -
-The methods in includes 3 constructors. The first is the `roster` constructor for the Player object that accepts the name, birthdate, hometown, weight, height, and position while goals, assists, powerplay goals (ppGoals), powerplay assists (ppAssists), shots are set initialy to 0. The second is the `recreation` constructor, which will take all of the player information including roster as well as the play information (goals, assists etc.). This constructor accepts name, birthdate, hometown, weight, height, position, assists, powerplay goals (ppGoals), powerplay assists (ppAssists), and shots. The third is the `copy` constructor, which will set all of the values in the new player to be the same as another. This method accepts an Player. All constructor methods return void.
+Methods - The methods of this class includes:
+* Accessors for all common variables (name, date of birth, hometown, height, number)
+* Mutators for all common variables
+* A constructor that sets up all information common to both classes.
 
-There is a mutator for each of the following variables - goals (`addGoals`), assists (`addAssists`), ppGoals (`addPPGoals`), ppAssists (`addPPAssists`), and shots (`addShots`). These are used to update the player's roster information when the player scores points. All mutators return void. All accept an int value of their coresponding variable that will be added onto their existing value for that variable. 
 
-There is an accessor for each of the following variables - goals (`getGoals`), assists (`getAssists`), ppGoals (`getPPGoals`), ppAssists (`getPPAssists`), shots (`getShots`), and shot percentage (`getShotsPer`). All of accessors return the value of their corresponding variable. 
+#### Skater
+Class Description - This class manages Skaters. Skaters are players that can score goals, thus have related goal scoring stats.
+They also have positions that do not include the goalie (G) position. These include right wing, left wing, center, and defence.
 
-The helper methods include `calcShotsPer`, `calcPoints`, and `calcPPPoints`.  `calcShotsPer` calculates the percentage of the shots that results in goals. This uses the calculation `percent = (shots * 1.0) / ((goals * 1.0)+(ppGoals * 1.0) *100.0`. the `calcShotsPer` method accepts no arguments and returns percent as a double. `calcPoints` calculates the total points for goals and assists. It accepts no arguments and returns points as an int. `calcPPPoints` calculates the total points for powerplay goals and powerplay assists. It accepts no arguments and returns points as an int. 
+Methods - The methods of this class includes:
+* A constructor that makes use of the Player constructor (no stats)
+* A constructor that creates a Skater with existing stats
+* Accessors for all Skater unique variables (see implementation details)
+* Mutators for all Skater unique variables 
+* `calcShotsPer` to calculate successful shots percentage
+* `calcPoints`to calculate non powerplay points
+* `calcPPPoints`to calculate  powerplay points
+
+
+#### Goalie
+Class Description -  This class manages Goalies. Goalies are players that CANNOT score goals. Instead they have stats including shots against, goals against, shutouts, minutes played, goals against averages, and save percentages.
+They have the position of goalie (G). This is important because they can be identified by this trait.
+
+Methods - The methods of this class includes:
+* A constructor that makes use of the Player constructor (no stats)
+* A constructor that creates a Goalie with existing stats
+* Accessors for all Goalie unique variables (see implementation details)
+* Mutators for all Goalie unique variables 
+* `calcSavePer` to calculate successful save percentage
+* `calcGAA`to calculate goals against average
+
 
 ### Player List
 Class Description -  Provides a description of the class, detailed description of the encapsulated information, detailed description of the role of the class and its interaction, and the assumptions made regarding the design of the class.
@@ -29,9 +53,10 @@ Method Descriptions -
 
 ## Implementation Details
 Provides a full description of the internal state of the class and for all methods there is a plan for implementation or an algorithm provided.
-### Player
+
+### Skater
 Player needs to store:
-* pName - String
+* name - String
 * birth - String
 * homeTown - String
 * weight - String
@@ -45,20 +70,32 @@ Player needs to store:
 * shots - int
 * shotsPer - double
 * points - int
+* ppPoints - int
 
 #### Important Methods
-* `ppPoints` Calculates the total points from ppGoals and ppAssists.
+* `ppPoints` Calculates the total points ppGoals + ppAssist
 * `shotPer` Calculates the shots percentage by dividing (goals + ppGoals) by shots. 
-* `points` Calculates total points goals + assists + ppGoals + ppAssist
+* `points` Calculates total points goals + assists
 
-### Player List
+### Goalie
 Player List needs to store:
-* A variable - type
-* A variable - type 
+* name - String
+* birth - String
+* homeTown - String
+* weight - String
+* height - String
+* pNum - String
+* position - Enum
+* shotsAgainst - int
+* goalsAgainst - int
+* shutouts - int
+* minutes - int
+* gAA - double
+* savePer - double
 
 #### Important Methods
-* `method name` Method description
-* `method name` Method description
+* `gAA` Voals against * 60 minutes / minutes played
+* `savePer` 1 - (goals against / shots against).
 
 ### Menu
 Player List needs to store:
