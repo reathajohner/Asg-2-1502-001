@@ -62,7 +62,14 @@ To list roster information, list player statistics, record goals, record shots, 
 
 Method Descriptions - 
 * Main method runs the entire program. Accepts no arguments. Void and returns nothing.
-*
+* `printMenu` prints out the menu. Accepts nothing. Returns nothing.
+* `doMenu` menu option switch. Accepts String input and PlayerList list. Returns boolean.
+* `listRoster` prints out all players roster. Accepts PlayerList list. Retruns nothing.
+* `listStats` prints out all players and their stats. Accepts PlayerList list. Retruns nothing.
+* `addPlayer` adds player information. Accepts PlayerList list. Retruns nothing. Calls player constructor based on position. Calls addPlayer in PlayerList.
+* `recordShot` reccords a shot for a Skater. Accepts PlayerList list and a String player number. Returns nothing.
+* `recordGoal` reccords a goal for a Skater and up to 2 assists. Accepts PlayerList list, String input, and boolean powerplay. Returns nothing.
+* `recordShutout`records a shutout for a Goalie. Accepts PlayerList list, and a String player number. Returns nothing.
 
 ### TableFactory & Table
 
