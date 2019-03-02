@@ -2,6 +2,11 @@
 ## The Public Interface
 The public interface will allow the user to add new players, list their roster information, list their stats, record dhots, record goals and assits, record powerplay goals and assists, as well as relating that information in relation to a goalie, recording minutes played by a goalie, and recording shutouts with minutes played.
 
+_Definitions For Terms Used:_ 
+* Common Variables - includes all roster information (name, position, jersey number, date of birth, home town, weight, height)
+* Skater Unique Variables - includes goals, assists, powerplay goals, powerplay assists, and shots on net.
+* Goalie Unique Variables - includes shots against, goals against, shutouts, minutes.
+
 Read more about the classes below in the order of Player, Goalie, Skater, PlayerList, TeamReader, TeamWriter, TableFactory, Table, RosterTable, SkaterStatTable,  and GoalieStatTable.
 
 ### Player, Skater, and Goalie
@@ -19,8 +24,8 @@ They also have positions that do not include the goalie (G) position. These incl
 
 Methods - The methods of this class includes:
 * A constructor that makes use of the Player constructor (no stats)
-* A constructor that creates a Skater with existing stats
-* Accessors for all Skater unique variables (see implementation details)
+* A constructor that creates a Skater with existing stats. Accepts all Skater Unique Variables as well as goals, assists, powerplay goals, powerplay assists, and shots on net.
+* Accessors for all Skater Unique Variables as well as goals, assists, powerplay goals, powerplay assists, shots on net, points, powerplay points, and shooting percentage.
 * Mutators for all Skater unique variables 
 * `calcShotsPer` to calculate successful shots percentage
 * `calcPoints`to calculate non powerplay points
@@ -32,9 +37,9 @@ Class Description -  This class manages Goalies. Goalies are players that CANNOT
 They have the position of goalie (G). This is important because they can be identified by this trait.
 
 Methods - The methods of this class includes:
-* A constructor that makes use of the Player constructor (no stats)
-* A constructor that creates a Goalie with existing stats
-* Accessors for all Goalie unique variables (see implementation details)
+* A constructor that makes use of the Player constructor (no stats). 
+* A constructor that creates a Goalie with existing stats. Accepts all common variables as well as int shots against, int goals against, int shutouts, and int minutes.
+* Accessors for all Goalie unique variables.
 * Mutators for all Goalie unique variables 
 * `calcSavePer` to calculate successful save percentage
 * `calcGAA`to calculate goals against average
@@ -45,17 +50,19 @@ Class Description - The Player List class manages, adding Players to an Array Li
 
 Method Descriptions - The methods of this class includes:
 * A constructor to create an ArrayList
-* Mutator for the ArrayList to add a player
-* Accessor to get stored players
-* Accessor to retrieve player by number
-* Accessor to retrieve Skaters
-* Accessor to retrieve Goalies
+* Mutator for the ArrayList to add a player. Accepts a Player. Returns nothing.
+* Accessor to get stored players. Accepts nothing. Returns a the ArrayList.
+* Accessor to retrieve player by number. Accepts a String for the player number. Returns a player.
+* Accessor to retrieve Skaters. Accepts nothing. Returns a String of all players that are not goalies from the ArrayList.
+* Accessor to retrieve Goalies. Accepts nothing. Returns a String of all goalies from the ArrayList.
 
 ### Menu
 Class Description - The Menu class is what the user most directly interacts with. It calls the other classes to fulfill its functions.
 To list roster information, list player statistics, record goals, record shots, and record shut outs it calls the Player class and its subclasses. To add players it calls the related Player class as well as the PlayerList class to add them to the ArrayList. To imput player information files it calls the TeamReader class and the TableFactory class. To output files it calls the TeamWriter class and the TableFactory class.
 
 Method Descriptions - 
+* Main method runs the entire program. Accepts no arguments. Void and returns nothing.
+*
 
 ### TableFactory & Table
 
