@@ -72,10 +72,18 @@ Method Descriptions -
 * `recordShutout`records a shutout for a Goalie. Accepts PlayerList list, and a String player number. Returns nothing.
 
 ### TableFactory & Table
+Class Description - A superclass that contains 3 subclasses(`RosterTable``SkaterStatTable``GoalieStatTable`)Allows for the user to pass in a PlayerList and get back a String. This can be used to print. A roster information list of all players, print a list of all skaters and stats, and print a list of all goalies and stats.
+
+Subclasses Descriptions - 
+* `RosterTable` prints roster info for all players. Accepts a PlayerList. Returns a String.
+* `SkaterStatTable` prints all Skater and stats info. Accepts a PlayerList. Returns a String.
+* `GoalieStattable.` prints all Goalie and stats info. Accepts a PlayerList. Returns a String.
 
 ### TeamReader
+Class Description - Allows for the user to pass in a File and get back a PlayerList loaded from that file.
 
 ### TeamWriter
+Class Description - Allows for the user to pass in a File and a PlayerList and the PlayerList will be written to the file.
 
 ## Implementation Details
 Provides a full description of the internal state of the class and for all methods there is a plan for implementation or an algorithm provided.
@@ -120,11 +128,38 @@ Player List needs to store:
 * savePer - double
 
 #### Important Methods
-* `gAA` Voals against * 60 minutes / minutes played
+* `gAA` Goals against * 60 minutes / minutes played
 * `savePer` 1 - (goals against / shots against).
 
 ### Menu
-Player List needs to store:
+Menu needs to store:
+* A variable - type
+* A variable - type 
+
+#### Important Methods
+* `method name` Method description
+* `method name` Method description
+
+### TableFactory & Table
+Menu needs to store:
+* A variable - type
+* A variable - type 
+
+#### Important Methods
+* `method name` Method description
+* `method name` Method description
+
+### TeamReader
+Menu needs to store:
+* A variable - type
+* A variable - type 
+
+#### Important Methods
+* `method name` Method description
+* `method name` Method description
+
+### TeamWriter
+Menu needs to store:
 * A variable - type
 * A variable - type 
 
