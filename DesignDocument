@@ -41,15 +41,27 @@ Methods - The methods of this class includes:
 
 
 ### Player List
-Class Description -  Provides a description of the class, detailed description of the encapsulated information, detailed description of the role of the class and its interaction, and the assumptions made regarding the design of the class.
-The Player List class manages reading in players from a file, adding them to an Array List, making changes to that Array List (including adding and removing players), as well as saving the new player list into its own text file. 
+Class Description - The Player List class manages, adding Players to an Array List and making changes to that Array List (including adding and removing players). 
 
-Method Descriptions - 
+Method Descriptions - The methods of this class includes:
+* A constructor to create an ArrayList
+* Mutator for the ArrayList to add a player
+* Accessor to get stored players
+* Accessor to retrieve player by number
+* Accessor to retrieve Skaters
+* Accessor to retrieve Goalies
 
 ### Menu
-Class Description -  Provides a description of the class, detailed description of the encapsulated information, detailed description of the role of the class and its interaction, and the assumptions made regarding the design of the class.
+Class Description - The Menu class is what the user most directly interacts with. It calls the other classes to fulfill its functions.
+To list roster information, list player statistics, record goals, record shots, and record shut outs it calls the Player class and its subclasses. To add players it calls the related Player class as well as the PlayerList class to add them to the ArrayList. To imput player information files it calls the TeamReader class and the TableFactory class. To output files it calls the TeamWriter class and the TableFactory class.
 
 Method Descriptions - 
+
+### TableFactory & Table
+
+### TeamReader
+
+### TeamWriter
 
 ## Implementation Details
 Provides a full description of the internal state of the class and for all methods there is a plan for implementation or an algorithm provided.
