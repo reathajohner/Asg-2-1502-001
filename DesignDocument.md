@@ -13,9 +13,9 @@ Read more about the classes below in the order of Player, Goalie, Skater, Player
 Class Description - The Player abstract superclass has 2 subclasses, Skater and Goalie. Both a Skater and a Goalie have the "Is A" relationship to Player.
 
 Methods - The methods of this class includes:
-* Accessors for all common variables (name, date of birth, hometown, height, number)
-* Mutators for all common variables
-* A constructor that sets up all information common to both classes.
+* Accessors for all common variables. Accepts nothing. Returns the related variable.
+* Mutators for all common variables. Accepts the type (Strings & Enum) to change the related variable. Returns nothing.
+* A constructor that sets up all information common to both classes. Accepts all common variables. Returns nothing.
 
 
 #### Skater
@@ -23,13 +23,13 @@ Class Description - This class manages Skaters. Skaters are players that can sco
 They also have positions that do not include the goalie (G) position. These include right wing, left wing, center, and defence.
 
 Methods - The methods of this class includes:
-* A constructor that makes use of the Player constructor (no stats)
+* A constructor that makes use of the Player constructor. 
 * A constructor that creates a Skater with existing stats. Accepts all Skater Unique Variables as well as goals, assists, powerplay goals, powerplay assists, and shots on net.
 * Accessors for all Skater Unique Variables as well as goals, assists, powerplay goals, powerplay assists, shots on net, points, powerplay points, and shooting percentage.
 * Mutators for all Skater unique variables 
-* `calcShotsPer` to calculate successful shots percentage
-* `calcPoints`to calculate non powerplay points
-* `calcPPPoints`to calculate  powerplay points
+* `calcShotsPer` to calculate successful shots percentage. Accepts nothing. Returns nothing.
+* `calcPoints`to calculate non powerplay points. Accepts nothing. Returns nothing.
+* `calcPPPoints`to calculate  powerplay points. Accepts nothing. Returns nothing.
 
 
 #### Goalie
@@ -38,18 +38,18 @@ They have the position of goalie (G). This is important because they can be iden
 
 Methods - The methods of this class includes:
 * A constructor that makes use of the Player constructor (no stats). 
-* A constructor that creates a Goalie with existing stats. Accepts all common variables as well as int shots against, int goals against, int shutouts, and int minutes.
-* Accessors for all Goalie unique variables.
-* Mutators for all Goalie unique variables 
-* `calcSavePer` to calculate successful save percentage
-* `calcGAA`to calculate goals against average
+* A constructor that creates a Goalie with existing stats. Accepts all common variables as well as int shots against, int goals against, int shutouts, and int minutes. Returns nothing.
+* Accessors for all Goalie unique variables. Accepts nothing. Returns the related goalie unique variable.
+* Mutators for all Goalie unique variables. Accepts the related goalie unique variable. Returns nothing.
+* `calcSavePer` to calculate successful save percentage. Accepts nothing. Returns nothing.
+* `calcGAA`to calculate goals against average. Accepts nothing. Returns nothing.
 
 
 ### Player List
 Class Description - The Player List class manages, adding Players to an Array List and making changes to that Array List (including adding and removing players). 
 
 Method Descriptions - The methods of this class includes:
-* A constructor to create an ArrayList
+* A constructor to create an ArrayList. Accepts nothing. Returns nothing
 * Mutator for the ArrayList to add a player. Accepts a Player. Returns nothing.
 * Accessor to get stored players. Accepts nothing. Returns a the ArrayList.
 * Accessor to retrieve player by number. Accepts a String for the player number. Returns a player.
