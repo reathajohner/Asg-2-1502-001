@@ -177,5 +177,8 @@ public class Skater extends Player {
 		this.assists += 1;
 		this.powerPlayAssists += 1;
 	}
+	public void recordShot() {
+		this.shots += 1;
+	}
 
 }
