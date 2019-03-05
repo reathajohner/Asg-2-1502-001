@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 public class Skater extends Player {
 	
 	private int goals = 0;
