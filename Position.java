@@ -1,5 +1,5 @@
 public enum Position {
 
-	F, RW, LW, C, D;
+	F, RW, LW, C, D, G;
 
 }
