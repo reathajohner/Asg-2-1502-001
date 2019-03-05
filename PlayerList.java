@@ -5,14 +5,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * <h1>W19 - COMP 1502 - Assignment 1 PlayerList Class</h1> Holds a list of
+ * <h1>W19 - COMP 1502 - Assignment 2 PlayerList Class</h1> Holds a list of
  * Player and allows for Players to be added, found by jersey number, and for
  * shots, goals, pp goals to be recorded. Also available are options to print
  * out a roster table, stats table and load/save a PlayerList from/to a file.
  * Player's are stored in an internal ArrayList of Player.
  * 
- * @author Tyson Kendon, Jonathan Hudson
- * @version 1.0
+ * @author Reatha Johner
  *
  */
 public class PlayerList {
