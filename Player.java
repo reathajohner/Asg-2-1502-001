@@ -157,43 +157,6 @@ public class Player {
 	/**
 	 * Record a shot
 	 */
-	public void recordShot() {
-		this.shots += 1;
-	}
-
-	/**
-	 * Record a goal (note this adds both a goal and a shot on goal)
-	 */
-	public void recordGoal() {
-		this.goals += 1;
-		this.shots += 1;
-	}
-
-	/**
-	 * Record an assist
-	 */
-	public void recordAssist() {
-		assists += 1;
-	}
-
-	/**
-	 * Add a power play goal (note this adds both regular goal, power play goal, and
-	 * shot on goal)
-	 */
-	public void recordPowerPlayGoal() {
-		this.goals += 1;
-		this.powerPlayGoals += 1;
-		this.shots += 1;
-	}
-
-	/**
-	 * Add a power play assist (note this adds both a regular assist and power play
-	 * assist
-	 */
-	public void recordPowerPlayAssist() {
-		this.assists += 1;
-		this.powerPlayAssists += 1;
-	}
 
 	/**
 	 * A roster table header for all Player's
