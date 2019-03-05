@@ -53,26 +53,6 @@ public class Player {
 	/**
 	 * Integer goals of player (goals >= 0)
 	 */
-	private int goals = 0;
-	/**
-	 * Integer assists of player (assists >= 0)
-	 */
-	private int assists = 0;
-	/**
-	 * Integer Power play goals of player (should be subset of goals)
-	 * (powerPlayGoals >= 0)
-	 */
-	private int powerPlayGoals = 0;
-	/**
-	 * Integer power play assists of player (should be subset of assists)
-	 * (powerPlayAssists >= 0)
-	 */
-	private int powerPlayAssists = 0;
-	/**
-	 * Integer shots on goal of player (should be at least as large as goals) (shots
-	 * >= 0)
-	 */
-	private int shots = 0;
 
 	/**
 	 * Create all parts of a player
@@ -93,17 +73,6 @@ public class Player {
 		this.homeTown = homeTown;
 		this.weight = weight;
 		this.height = height;
-	}
-
-	
-
-	/**
-	 * Copy the player entered
-	 * 
-	 * @param p Player to be copied
-	 */
-	public Player(Player p) {
-		this(p.name, p.position, p.number, p.dateOfBirth, p.homeTown, p.weight, p.height, p.goals, p.assists, p.powerPlayGoals, p.powerPlayAssists, p.shots);
 	}
 
 	/**
@@ -184,77 +153,6 @@ public class Player {
 	 * 
 	 * @return Integer of goals
 	 */
-	public int getGoals() {
-		return goals;
-	}
-
-	/**
-	 * Player's assists
-	 * 
-	 * @return Integer of player assists
-	 */
-	public int getAssists() {
-		return assists;
-	}
-
-	/**
-	 * Player's power play goals
-	 * 
-	 * @return Integer of poewr play goals
-	 */
-	public int getPowerPlayGoals() {
-		return powerPlayGoals;
-	}
-
-	/**
-	 * Player's power play assists
-	 * 
-	 * @return Integer of power play assists
-	 */
-	public int getPowerPlayAssists() {
-		return powerPlayAssists;
-	}
-
-	/**
-	 * Player's shots on goal
-	 * 
-	 * @return Integer of player shots on goal
-	 */
-	public int getShots() {
-		return shots;
-	}
-
-	/**
-	 * Return points (note this is sum of power play goals and power play assists)
-	 * 
-	 * @return Integer points of the player
-	 */
-	public int getPoints() {
-		return goals + assists;
-	}
-
-	/**
-	 * Return power play points (note this is sum of power play goals and power play
-	 * assists)
-	 * 
-	 * @return Integer power play points of the player
-	 */
-	public int getPowerPlayPoints() {
-		return powerPlayGoals + powerPlayAssists;
-	}
-
-	/**
-	 * Calculate and return a shooting percentage (0-100)
-	 * 
-	 * @return Double of shooting percentage (0.0-100.0), 0 is returned if player
-	 *         has no shots
-	 */
-	public double getShootingPercentage() {
-		if (shots == 0) {
-			return 0;
-		}
-		return ((double) goals) / ((double) shots) * 100;
-	}
 
 	/**
 	 * Record a shot
