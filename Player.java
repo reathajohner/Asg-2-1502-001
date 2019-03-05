@@ -183,30 +183,6 @@ public class Player {
 	}
 
 	/**
-	 * The format for making a table of player stats
-	 */
-	private static final String STATS_FORMAT = "%-20s %2s %3s %3s %3s %3s %3s %3s %3s %3s";
-
-	/**
-	 * A stats table header for all Player's
-	 * 
-	 * @return String containing headers for players' stats table
-	 */
-	public static String getFormattedStatsHeader() {
-		return String.format(STATS_FORMAT, "Name", "#", "P", "G", "A", "PPP", "PPG", "PPA", "S", "S%");
-	}
-
-	/**
-	 * A stats table entry for a player
-	 * 
-	 * @return String containing entries of player's stats formatted for table type
-	 *         spacing
-	 */
-	public String getFormattedStats() {
-		return String.format(STATS_FORMAT, name, number, getPoints(), goals, assists, getPowerPlayPoints(), powerPlayGoals, powerPlayAssists, shots, String.format("%3.2f", getShootingPercentage()));
-	}
-
-	/**
 	 * Reads a csv formatted String of a Player presumably from a file to construct
 	 * a Player name,pos,#,dob,home,wt,ht,G,A,PPG,PPA,SH,
 	 * 
