@@ -142,4 +142,25 @@ public class Goalie extends Player {
 	public void recordMinutes(int add) {
 		this.minutes += add;
 	}
+	
+	private static final String STATS_FORMAT = "%-20s %2s %3s ";
+
+	/**
+	 * A stats table header for all Player's
+	 * 
+	 * @return String containing headers for players' stats table
+	 */
+	public static String getFormattedStatsHeader() {
+		return String.format(STATS_FORMAT, "Name", "#", "SA", "GA", "SO", "MIN");
+	}
+
+	/**
+	 * A stats table entry for a player
+	 * 
+	 * @return String containing entries of player's stats formatted for table type
+	 *         spacing
+	 */
+	public String getFormattedStats() {
+		return String.format(STATS_FORMAT, name, number, shotsAgainst, goalsAgainst, shutouts, powerPlayGoals, powerPlayAssists, shots, String.format("%3.2f", getShootingPercentage()));
+	}
 }
