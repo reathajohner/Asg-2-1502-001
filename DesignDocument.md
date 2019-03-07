@@ -1,6 +1,6 @@
 # Asignment 1
 ## The Public Interface
-The public interface will allow the user to add new players, list their roster information, list their stats, record dhots, record goals and assits, record powerplay goals and assists, as well as relating that information in relation to a goalie, recording minutes played by a goalie, and recording shutouts with minutes played.
+The public interface will allow the user to add new players, list their roster information, list their stats, record shots, record goals and assits, record powerplay goals and assists, as well as relating that information in relation to a goalie, recording minutes played by a goalie, and recording shutouts with minutes played.
 
 _Definitions For Terms Used:_ 
 * Common Variables - includes all roster information (name, position, jersey number, date of birth, home town, weight, height)
