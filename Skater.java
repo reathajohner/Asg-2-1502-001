@@ -2,6 +2,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 public class Skater extends Player {
 	
+	/**
+	 * Integer goals of player (goals >= 0)
+	 */
 	private int goals = 0;
 	/**
 	 * Integer assists of player (assists >= 0)
@@ -26,20 +29,20 @@ public class Skater extends Player {
 	/**
 	 * Create all parts of a Skater
 	 * 
-	 * @param name             String name of player
-	 * @param position         Enum Position of player
-	 * @param number           String number of player
-	 * @param dateOfBirth      String date of birth of player
-	 * @param homeTown         String hometown of player
-	 * @param weight           String Weight of player
-	 * @param height           String height of player
-	 * @param goals            Integer goals of player (goals >= 0)
-	 * @param assists          Integer assists of player (assists >= 0)
-	 * @param powerPlayGoals   Integer Power play goals of player (should be subset
+	 * @param name             String name of skater
+	 * @param position         Enum Position of skater
+	 * @param number           String number of skater
+	 * @param dateOfBirth      String date of birth of skater
+	 * @param homeTown         String hometown of skater
+	 * @param weight           String Weight of skater
+	 * @param height           String height of skater
+	 * @param goals            Integer goals of skater (goals >= 0)
+	 * @param assists          Integer assists of skater (assists >= 0)
+	 * @param powerPlayGoals   Integer Power play goals of skater (should be subset
 	 *                         of goals) (powerPlayGoals >= 0)
-	 * @param powerPlayAssists Integer power play assists of player (should be
+	 * @param powerPlayAssists Integer power play assists of skater (should be
 	 *                         subset of assists) (powerPlayAssists >= 0)
-	 * @param shots            Integer shots on goal of player (should be at least
+	 * @param shots            Integer shots on goal of skater (should be at least
 	 *                         as large as goals) (shots >= 0)
 	 */
 	public Skater(String name, 
@@ -63,14 +66,19 @@ public class Skater extends Player {
 	}
 	
 	/**
-	 * Copy the player entered
+	 * Copy the skater entered
 	 * 
-	 * @param p Player to be copied
+	 * @param p Skater to be copied
 	 */
 	public Skater(Player p) {
 		this(p.name, p.position, p.number, p.dateOfBirth, p.homeTown, p.weight, p.height, p.goals, p.assists, p.powerPlayGoals, p.powerPlayAssists, p.shots);
 	}
 	
+	/**
+	 * Player's goals
+	 * 
+	 * @return goals
+	 */
 	public int getGoals() {
 		return goals;
 	}
