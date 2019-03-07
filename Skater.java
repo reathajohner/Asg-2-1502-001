@@ -150,6 +150,10 @@ public class Skater extends Player {
 		}
 		return ((double) goals) / ((double) shots) * 100;
 	}
+	
+	/**
+	 * Record a shot
+	 */
 	public void recordShot() {
 		this.shots += 1;
 	}
@@ -187,6 +191,9 @@ public class Skater extends Player {
 		this.assists += 1;
 		this.powerPlayAssists += 1;
 	}
+	/**
+	 * Add a shot
+	 */
 	public void recordShot() {
 		this.shots += 1;
 	}

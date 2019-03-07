@@ -40,9 +40,10 @@ Methods - The methods of this class includes:
 * A constructor that makes use of the Player constructor (no stats). 
 * A constructor that creates a Goalie with existing stats. Accepts all common variables as well as int shots against, int goals against, int shutouts, and int minutes. Returns nothing.
 * Accessors for all Goalie unique variables. Accepts nothing. Returns the related goalie unique variable.
-* Mutators for all Goalie unique variables. Accepts the related goalie unique variable. Returns nothing.
+* Mutators for all Goalie unique variables. Accepts nothing. Returns nothing.
 * Mutator `getSavePer` to calculate successful save percentage. Accepts nothing. Returns save percentage.
-* Mutator `getGAA`to calculate goals against average. Accepts nothing. Returns nothing.
+* Mutator `getGAA` to calculate goals against average. Accepts nothing. Returns nothing.
+* Mutator `recordMinutes` to records minutes played. Accepts int of minutes played. Returns nothing. 
 
 
 ### Player List

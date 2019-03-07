@@ -116,6 +116,30 @@ public class Goalie extends Player {
 		return 1 - (goalsAgainst / shotsAgainst);
 	}
 	
+	/**
+	 * Record a shot against
+	 */
+	public void recordShotAgainst() {
+		this.shotsAgainst += 1;
+	}
 	
+	/**
+	 * Record a goal against
+	 */
+	public void recordGoalAgainst() {
+		this.goalsAgainst += 1;
+	}
+	/**
+	 * Record a goal against
+	 */
+	public void recordShutouts() {
+		this.shutouts += 1;
+	}
 	
+	/**
+	 * Record a minutes played
+	 */
+	public void recordMinutes(int add) {
+		this.minutes += add;
+	}
 }
