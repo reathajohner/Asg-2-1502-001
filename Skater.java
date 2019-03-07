@@ -54,7 +54,7 @@ public class Skater extends Player {
 			int powerPlayGoals, 
 			int powerPlayAssists, 
 			int shots) {
-		this(name, position, number, dateOfBirth, homeTown, weight, height);
+		super(name, position, number, dateOfBirth, homeTown, weight, height);
 		this.goals = goals;
 		this.assists = assists;
 		this.powerPlayGoals = powerPlayGoals;
