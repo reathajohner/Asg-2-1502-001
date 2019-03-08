@@ -25,6 +25,20 @@ public class Skater extends Player {
 	private int shots = 0;
 	
 	/**
+	 * Create Roster parts of a Skater
+	 * 
+	 * @param name        String name of Skater
+	 * @param position    Enum Position of Skater
+	 * @param number      String number of Skater
+	 * @param dateOfBirth String date of birth of Skater
+	 * @param homeTown    String hometown of Skater
+	 * @param weight      String weight of Skater
+	 * @param height      String height of Skater
+	 */
+	public Skater(String name, Position position, String number, String dateOfBirth, String homeTown, String weight, String height) {
+		super(name, position, number, dateOfBirth, homeTown, weight, height);
+	}
+	/**
 	 * Create all parts of a Skater
 	 * 
 	 * @param name             String name of skater

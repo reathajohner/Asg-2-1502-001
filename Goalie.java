@@ -18,6 +18,20 @@ public class Goalie extends Player {
 	private int minutes;
 
 	/**
+	 * Create Roster parts of a Goalie
+	 * 
+	 * @param name        String name of Goalie
+	 * @param position    Enum Position of Goalie
+	 * @param number      String number of Goalie
+	 * @param dateOfBirth String date of birth of Goalie
+	 * @param homeTown    String hometown of Goalie
+	 * @param weight      String weight of Goalie
+	 * @param height      String height of Goalie
+	 */
+	public Goalie(String name, Position position, String number, String dateOfBirth, String homeTown, String weight, String height) {
+		super(name, position, number, dateOfBirth, homeTown, weight, height);
+	}
+	/**
 	 * Create all parts of a Goalie
 	 * 
 	 * @param name             String name of goalie
