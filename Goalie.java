@@ -35,7 +35,7 @@ public class Goalie extends Player {
 	 * @param minutes		   Integer minutes played by goalie (minutes >= 0)
 	 * 
 	 */
-	public Skater(String name, 
+	public Goalie(String name, 
 			Position position, 
 			String number, 
 			String dateOfBirth, 
