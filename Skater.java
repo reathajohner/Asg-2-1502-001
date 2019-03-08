@@ -204,18 +204,18 @@ public class Skater extends Player {
 	private static final String STATS_FORMAT = "%-20s %2s %3s %3s %3s %3s %3s %3s %3s %3s";
 
 	/**
-	 * A stats table header for all Player's
+	 * A stats table header for all Skater's
 	 * 
-	 * @return String containing headers for players' stats table
+	 * @return String containing headers for skater stats table
 	 */
 	public static String getFormattedStatsHeader() {
 		return String.format(STATS_FORMAT, "Name", "#", "P", "G", "A", "PPP", "PPG", "PPA", "S", "S%");
 	}
 
 	/**
-	 * A stats table entry for a player
+	 * A stats table entry for a skater
 	 * 
-	 * @return String containing entries of player's stats formatted for table type
+	 * @return String containing entries of skater's stats formatted for table type
 	 *         spacing
 	 */
 	public String getFormattedStats() {
