@@ -70,8 +70,13 @@ public class Skater extends Player {
 	 * 
 	 * @param p Skater to be copied
 	 */
-	public Skater(Player p) {
-		this(p.name, p.position, p.number, p.dateOfBirth, p.homeTown, p.weight, p.height, p.goals, p.assists, p.powerPlayGoals, p.powerPlayAssists, p.shots);
+	public Skater(Skater p) {
+		super(p.name, p.position, p.number, p.dateOfBirth, p.homeTown, p.weight, p.height);
+		this.goals = p.goals;
+		this.assists = p.assists;
+		this.powerPlayGoals = p.powerPlayGoals;
+		this.powerPlayAssists = p.powerPlayAssists;
+		this.shots = p.shots;
 	}
 	
 	/**
@@ -190,12 +195,6 @@ public class Skater extends Player {
 	public void recordPowerPlayAssist() {
 		this.assists += 1;
 		this.powerPlayAssists += 1;
-	}
-	/**
-	 * Add a shot
-	 */
-	public void recordShot() {
-		this.shots += 1;
 	}
 	
 	/**

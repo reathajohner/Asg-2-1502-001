@@ -25,31 +25,31 @@ public class Player {
 	/**
 	 * String name of player
 	 */
-	private String name;
+	String name;
 	/**
 	 * Enum Position of player
 	 */
-	private Position position;
+	Position position;
 	/**
 	 * String number of player
 	 */
-	private String number;
+	String number;
 	/**
 	 * String date of birth of player
 	 */
-	private String dateOfBirth;
+	String dateOfBirth;
 	/**
 	 * String hometown of player
 	 */
-	private String homeTown;
+	String homeTown;
 	/**
 	 * String Weight of player
 	 */
-	private String weight;
+	String weight;
 	/**
 	 * String height of player
 	 */
-	private String height;
+	String height;
 	/**
 	 * Integer goals of player (goals >= 0)
 	 */
@@ -73,6 +73,15 @@ public class Player {
 		this.homeTown = homeTown;
 		this.weight = weight;
 		this.height = height;
+	}
+	
+	/**
+	 * Copy the player entered
+	 * 
+	 * @param p Player to be copied
+	 */
+	public Player(Player p) {
+		this(p.name, p.position, p.number, p.dateOfBirth, p.homeTown, p.weight, p.height);
 	}
 
 	/**
@@ -197,11 +206,6 @@ public class Player {
 		this.homeTown = data.get(4);
 		this.weight = data.get(5);
 		this.height = data.get(6);
-		this.goals = Integer.parseInt(data.get(7));
-		this.assists = Integer.parseInt(data.get(8));
-		this.powerPlayGoals = Integer.parseInt(data.get(9));
-		this.powerPlayAssists = Integer.parseInt(data.get(10));
-		this.shots = Integer.parseInt(data.get(11));
 	}
 
 	/**
@@ -219,11 +223,6 @@ public class Player {
 		builder.append(homeTown).append(",");
 		builder.append(weight).append(",");
 		builder.append(height).append(",");
-		builder.append(goals).append(",");
-		builder.append(assists).append(",");
-		builder.append(powerPlayGoals).append(",");
-		builder.append(powerPlayAssists).append(",");
-		builder.append(shots).append(",");
 		return builder.toString();
 	}
 

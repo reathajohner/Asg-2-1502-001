@@ -20,7 +20,7 @@ public class Goalie extends Player {
 	private int minutes;
 
 	/**
-	 * Create all parts of a Skater
+	 * Create all parts of a Goalie
 	 * 
 	 * @param name             String name of goalie
 	 * @param position         Enum Position of goalie
@@ -58,8 +58,12 @@ public class Goalie extends Player {
 	 * 
 	 * @param p Goalie to be copied
 	 */
-	public Goalie(Player p) {
-		this(p.name, p.position, p.number, p.dateOfBirth, p.homeTown, p.weight, p.height, p.shotsAgainst, p.goalsAgainst, p.shutouts, p.minutes);
+	public Goalie(Goalie p) {
+		super(p.name, p.position, p.number, p.dateOfBirth, p.homeTown, p.weight, p.height);
+		this.shotsAgainst = p.shotsAgainst;
+		this.goalsAgainst = p.goalsAgainst;
+		this.shutouts = p.shutouts;
+		this.minutes = p.minutes;
 	}
 	
 	/**
@@ -77,7 +81,7 @@ public class Goalie extends Player {
 	 * @return goals against
 	 */
 	public int getGoalsAgainst() {
-		return GoalsAgainst;
+		return goalsAgainst;
 	}
 	
 	/**
@@ -104,7 +108,7 @@ public class Goalie extends Player {
 	 * @return save percentage (goals against * 60 minutes / minutes played)
 	 */
 	public double getSavePer() {
-		return goalsAgainst * 60 / minutes played;
+		return goalsAgainst * 60 / minutes;
 	}
 	
 	/**
