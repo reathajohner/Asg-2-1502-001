@@ -20,6 +20,16 @@ public class PlayerList {
 	 * The Players in the list
 	 */
 	private ArrayList<Player> players;
+	/**
+	 * The Skaters in the list
+	 */
+	private ArrayList<Player> skaters;
+
+	/**
+	 * The Goalies in the list
+	 */
+	private ArrayList<Player> goalies;
+
 
 	/**
 	 * Construct a new empty PlayerList
@@ -36,7 +46,7 @@ public class PlayerList {
 	 */
 	public PlayerList(File file) throws FileNotFoundException {
 		this();
-		loadPlayerList(file);
+		TeamReader.loadPlayerList(file);
 	}
 
 	/**
@@ -62,6 +72,36 @@ public class PlayerList {
 		}
 		return null;
 	}
+	
+	/**
+	 * Get a skater with a given String jersey number
+	 * 
+	 * @param number String jersey number to search for
+	 * @return The skater found with jersey number, if no skater found then null
+	 */
+	public Player getSkaterByNumber(String number) {
+		for (Player p : skaters) {
+			if (p.getNumber().equals(number)) {
+				return p;
+			}
+		}
+		return null;
+	}
+	
+	/**
+	 * Get a goalie with a given String jersey number
+	 * 
+	 * @param number String jersey number to search for
+	 * @return The goalie found with jersey number, if no goalie found then null
+	 */
+	public Player getGoalieByNumber(String number) {
+		for (Player p : goalies) {
+			if (p.getNumber().equals(number)) {
+				return p;
+			}
+		}
+		return null;
+	}
 
 	/**
 	 * Add a player to the PlayerList
@@ -71,6 +111,22 @@ public class PlayerList {
 	public void addPlayer(Player p) {
 		players.add(p);
 	}
+	/**
+	 * Add a Goalie to the GoalieList
+	 * 
+	 * @param p The Player to add
+	 */
+	public void addGoalie(Player p) {
+		goalies.add(p);
+	}
+	/**
+	 * Add a Skater to the SkaterList
+	 * 
+	 * @param p The Player to add
+	 */
+	public void addSkater(Player p) {
+		skaters.add(p);
+	}
 
 	/**
 	 * Record a shot for a player
@@ -78,7 +134,7 @@ public class PlayerList {
 	 * @param number String jersey number of player who had the shot
 	 */
 	public void recordShot(String number) {
-		getPlayerByNumber(number).recordShot();
+		getSkaterByNumber(number).recordShot();
 	}
 
 	/**
@@ -189,22 +245,6 @@ public class PlayerList {
 		}
 		writer.close();
 		return true;
-	}
-
-	/**
-	 * Internal method to load a player from a file (used by constructor that takes
-	 * in File)
-	 * 
-	 * @param file The file to open and read player data out of
-	 * @throws FileNotFoundException If file doesn't exist
-	 */
-	private void loadPlayerList(File file) throws FileNotFoundException {
-		Scanner scanner = new Scanner(file);
-		while (scanner.hasNextLine()) {
-			Player p = new Player(scanner.nextLine());
-			players.add(p);
-		}
-		scanner.close();
 	}
 
 }

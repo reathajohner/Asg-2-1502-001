@@ -10,7 +10,8 @@ public class GoalieTest {
 
 	@Test
 	public void testConstructor() {
-		Player p = new Player ("Name", Position.G);
+		Goalie g = new Goalie ("Name", Position.G, "num", "dob", "home", "lbs", "ft", 1, 2, 3, 4);
+		AssertEquals ("Name", g.getName());
 	}
 
 }
