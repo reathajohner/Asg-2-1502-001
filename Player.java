@@ -129,14 +129,6 @@ public class Player {
 		return homeTown;
 	}
 
-	/**
-	 * Player's height
-	 * 
-	 * @return String of height
-	 */
-	public String getHeight() {
-		return height;
-	}
 
 	/**
 	 * Player's weight
@@ -145,6 +137,15 @@ public class Player {
 	 */
 	public String getWeight() {
 		return weight;
+	}
+	
+	/**
+	 * Player's height
+	 * 
+	 * @return String of height
+	 */
+	public String getHeight() {
+		return height;
 	}
 
 	/**
