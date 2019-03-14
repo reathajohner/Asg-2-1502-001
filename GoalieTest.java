@@ -14,9 +14,10 @@ public class GoalieTest {
 		assertEquals("home", g.getHomeTown());
 		assertEquals("lbs", g.getWeight());
 		assertEquals("ft", g.getHeight());
-		assertEquals(0, g.getShotsAgainst());
-		assertEquals(0, g.getGoalsAgainst());
-		assertEquals(0, g.getShutouts());
+		assertEquals(1, g.getShotsAgainst());
+		assertEquals(2, g.getGoalsAgainst());
+		assertEquals(3, g.getShutouts());
+		assertEquals(4, g.getMinutes());
 	}
 	
 	@Test
