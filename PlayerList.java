@@ -143,7 +143,7 @@ public class PlayerList {
 	 * @param scorer String jersey number of player who scored (should not be null)
 	 */
 	public void recordGoal(String scorer) {
-		getPlayerByNumber(scorer).recordGoal();
+		getSkaterByNumber(scorer).recordGoal();
 	}
 
 	/**
@@ -154,8 +154,8 @@ public class PlayerList {
 	 *               no player)
 	 */
 	public void recordGoal(String scorer, String a1) {
-		getPlayerByNumber(scorer).recordGoal();
-		getPlayerByNumber(a1).recordAssist();
+		getSkaterByNumber(scorer).recordGoal();
+		getSkaterByNumber(a1).recordAssist();
 	}
 
 	/**
@@ -169,9 +169,9 @@ public class PlayerList {
 	 *               no player)
 	 */
 	public void recordGoal(String scorer, String a1, String a2) {
-		getPlayerByNumber(scorer).recordGoal();
-		getPlayerByNumber(a1).recordAssist();
-		getPlayerByNumber(a2).recordAssist();
+		getSkaterByNumber(scorer).recordGoal();
+		getSkaterByNumber(a1).recordAssist();
+		getSkaterByNumber(a2).recordAssist();
 	}
 
 	/**
@@ -180,7 +180,7 @@ public class PlayerList {
 	 * @param scorer String jersey number of player who scored (should not be null)
 	 */
 	public void recordPowerPlayGoal(String scorer) {
-		getPlayerByNumber(scorer).recordPowerPlayGoal();
+		getSkaterByNumber(scorer).recordPowerPlayGoal();
 	}
 
 	/**
@@ -192,8 +192,8 @@ public class PlayerList {
 	 *               no player)
 	 */
 	public void recordPowerPlayGoal(String scorer, String a1) {
-		getPlayerByNumber(scorer).recordPowerPlayGoal();
-		getPlayerByNumber(a1).recordPowerPlayAssist();
+		getSkaterByNumber(scorer).recordPowerPlayGoal();
+		getSkaterByNumber(a1).recordPowerPlayAssist();
 	}
 
 	/**
@@ -207,44 +207,10 @@ public class PlayerList {
 	 *               no player)
 	 */
 	public void recordPowerPlayGoal(String scorer, String a1, String a2) {
-		getPlayerByNumber(scorer).recordPowerPlayGoal();
-		getPlayerByNumber(a1).recordPowerPlayAssist();
-		getPlayerByNumber(a2).recordPowerPlayAssist();
+		getSkaterByNumber(scorer).recordPowerPlayGoal();
+		getSkaterByNumber(a1).recordPowerPlayAssist();
+		getSkaterByNumber(a2).recordPowerPlayAssist();
 	}
-
-	/**
-	 * Write out to the console the players' roster info formatted as a table
-	 */
-	public void listAllPlayersRoster() {
-		System.out.println(Player.getFormattedRosterHeader());
-		for (Player p : players) {
-			System.out.println(p.getFormattedRoster());
-		}
-	}
-
-	/**
-	 * Write out to the console the players' stats formatted as a table
-	 */
-	public void listAllPlayersStats() {
-		System.out.println(Player.getFormattedStatsHeader());
-		for (Player p : players) {
-			System.out.println(p.getFormattedStats());
-		}
-	}
-
-	/**
-	 * Write the player data out to the given File
-	 * 
-	 * @param file The File to open and write player data to
-	 * @throws FileNotFoundException If file doesn't exist to write to
-	 */
-	public boolean recordToFile(File file) throws FileNotFoundException {
-		PrintWriter writer = new PrintWriter(file);
-		for (Player p : players) {
-			writer.println(p.getFileFormatString());
-		}
-		writer.close();
-		return true;
-	}
+	
 
 }
