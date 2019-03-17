@@ -133,8 +133,10 @@ public class PlayerList {
 	 * 
 	 * @param number String jersey number of player who had the shot
 	 */
-	public void recordShot(String number) {
+	public void recordShot(String number, String gNumber) {
 		getSkaterByNumber(number).recordShot();
+		getGoalieByNumber(gNumber).recordShotsAgainst();
+
 	}
 
 	/**
@@ -142,8 +144,9 @@ public class PlayerList {
 	 * 
 	 * @param scorer String jersey number of player who scored (should not be null)
 	 */
-	public void recordGoal(String scorer) {
+	public void recordGoal(String scorer, String gNumber) {
 		getSkaterByNumber(scorer).recordGoal();
+		getGoalieByNumber(gNumber).recordGoalAgainst();
 	}
 
 	/**
@@ -153,9 +156,10 @@ public class PlayerList {
 	 * @param a1     String jersey number of player who assisted the goal (null if
 	 *               no player)
 	 */
-	public void recordGoal(String scorer, String a1) {
+	public void recordGoal(String scorer, String a1, String gNumber) {
 		getSkaterByNumber(scorer).recordGoal();
 		getSkaterByNumber(a1).recordAssist();
+		getGoalieByNumber(gNumber).recordGoalAgainst();
 	}
 
 	/**
@@ -168,10 +172,12 @@ public class PlayerList {
 	 * @param a2     String jersey number of player who assisted the goal (null if
 	 *               no player)
 	 */
-	public void recordGoal(String scorer, String a1, String a2) {
+	public void recordGoal(String scorer, String a1, String a2, String gNumber) {
 		getSkaterByNumber(scorer).recordGoal();
 		getSkaterByNumber(a1).recordAssist();
 		getSkaterByNumber(a2).recordAssist();
+		getGoalieByNumber(gNumber).recordGoalAgainst();
+
 	}
 
 	/**
@@ -179,8 +185,10 @@ public class PlayerList {
 	 * 
 	 * @param scorer String jersey number of player who scored (should not be null)
 	 */
-	public void recordPowerPlayGoal(String scorer) {
+	public void recordPowerPlayGoal(String scorer, String gNumber) {
 		getSkaterByNumber(scorer).recordPowerPlayGoal();
+		getGoalieByNumber(gNumber).recordGoalAgainst();
+
 	}
 
 	/**
@@ -191,9 +199,11 @@ public class PlayerList {
 	 * @param a1     String jersey number of player who assisted the goal (null if
 	 *               no player)
 	 */
-	public void recordPowerPlayGoal(String scorer, String a1) {
+	public void recordPowerPlayGoal(String scorer, String a1, String gNumber) {
 		getSkaterByNumber(scorer).recordPowerPlayGoal();
 		getSkaterByNumber(a1).recordPowerPlayAssist();
+		getGoalieByNumber(gNumber).recordGoalAgainst();
+
 	}
 
 	/**
@@ -206,11 +216,20 @@ public class PlayerList {
 	 * @param a2     String jersey number of player who assisted the goal (null if
 	 *               no player)
 	 */
-	public void recordPowerPlayGoal(String scorer, String a1, String a2) {
+	public void recordPowerPlayGoal(String scorer, String a1, String a2, String gNumber) {
 		getSkaterByNumber(scorer).recordPowerPlayGoal();
 		getSkaterByNumber(a1).recordPowerPlayAssist();
 		getSkaterByNumber(a2).recordPowerPlayAssist();
+		getGoalieByNumber(gNumber).recordGoalAgainst();
+
 	}
 	
+	public void recordGoalieMinute(int min, String gNumber) {
+		getGoalieByNumber(gNumber).recordMinutes(min);
+	}
+	
+	public void recordShutout(String gNumber) {
+		getGoalieByNumber(gNumber).recordShutout();
+	}
 
 }
