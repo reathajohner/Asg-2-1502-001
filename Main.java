@@ -7,7 +7,7 @@ import java.util.Scanner;
 /**
  * A simple Time Keeper Program for hockey
  * 
- * @author Tyson Kendon, Jonathan Hudson
+ * @author Reatha JOhner
  * @version 1.0
  *
  */
@@ -78,9 +78,9 @@ public class Main {
 		System.out.println("1 - List Player Roster");
 		System.out.println("2 - List Player Stats");
 		System.out.println("A - Add player");
-		System.out.println("S # - record a shot for player");
-		System.out.println("G # <#> <#> - " + "record a goal for the " + "first player, " + "optionally assists for the second and third");
-		System.out.println("P # <#> <#> - " + "record a power play goal for " + "the first player, " + "optionally assists for the second and third");
+		System.out.println("S # - record a shot for player" + "goalie number");
+		System.out.println("G # <#> <#> - " + "record a goal for the " + "first player, " + "optionally assists for the second and third" + "goalie number");
+		System.out.println("P # <#> <#> - " + "record a power play goal for " + "the first player, " + "optionally assists for the second and third" + "goalie number");
 		System.out.println();
 		System.out.println("Q - quit");
 	}
