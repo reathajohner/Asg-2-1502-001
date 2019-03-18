@@ -32,10 +32,10 @@ public class Main {
 		PlayerList list;
 		if (filename.isEmpty()) {
 			// Empty list if no filename
-			list = new PlayerList();
+			list = new TeamReader();
 			System.out.println("New list created");
 		} else {
-			list = new PlayerList(new File(filename));
+			list = new TeamReader(new File(filename));
 			System.out.println("File loaded");
 		}
 		System.out.println("Time Keeper DB V1");
@@ -77,10 +77,15 @@ public class Main {
 	private static void printMenu() {
 		System.out.println("1 - List Player Roster");
 		System.out.println("2 - List Player Stats");
+		System.out.println("3 - List Goalie Stats");
 		System.out.println("A - Add player");
 		System.out.println("S # - record a shot for player" + "goalie number");
 		System.out.println("G # <#> <#> - " + "record a goal for the " + "first player, " + "optionally assists for the second and third" + "goalie number");
 		System.out.println("P # <#> <#> - " + "record a power play goal for " + "the first player, " + "optionally assists for the second and third" + "goalie number");
+		System.out.println("SA # - record a shot against a goalie");
+		System.out.println("GA # - record a goal against a goalie");
+		System.out.println("GP # MIN - record a game played by a goalie with given minutes");
+		System.out.println("SO # MIN - record a game played with a shutout by a goalie with given minutes);
 		System.out.println();
 		System.out.println("Q - quit");
 	}
@@ -101,6 +106,9 @@ public class Main {
 		case "2":
 			listStats(list);
 			break;
+		case "3":
+			listStats(list);
+			break;
 		case "A":
 			addPlayer(list);
 			break;
@@ -112,7 +120,15 @@ public class Main {
 			break;
 		case "P":
 			recordGoal(list, input, true);
+		case "SA":
+			recordShotAgainst(list, input);
+		case "GA":
+			recordGoalAgainst(list, input);
 			break;
+		case "GP":
+			recordGamePlayed(list, input);
+		case "SO":
+			recordShutOutGame(list, input);
 		case "Q":
 			return false;
 		}
@@ -212,6 +228,7 @@ public class Main {
 				list.recordPowerPlayGoal(g, a1, a2);
 			}
 		}
+		
 	}
 
 }
